@@ -12,4 +12,7 @@
 //
 //= require jquery/dist/jquery.min
 //= require bootstrap/dist/js/bootstrap.min
+//= require react
+//= require react_ujs
+//= require components
 //= require_tree .
