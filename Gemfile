@@ -32,7 +32,9 @@ group :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'shoulda-matchers'
+  gem 'rspec-sidekiq'
 end
 
 gem 'react-rails'
 gem 'carrierwave'
+gem 'sidekiq'
