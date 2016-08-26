@@ -22,6 +22,7 @@ We recommend you use one ruby version manager as [rbenv](http://rbenv.org/) | [r
 - 2. In home path this project you should download all dependencies with bundler `bundle install`
 - 3. After run bundler you should you database config, one example file is in config/database.yml.sample, maybe you want use it with `cp config/database.yml.sample config/database.yml`.
 - 4. After configured database you go run `bundle exec rake db:migrate` to generate ou database schema.
+- 5. This project manage frontend dependencies with [bower](https://bower.io/), to build dependencies use `bower install`
 
 To run tests you user `bundle exec rspec spec`, to run webserver use `bundle exec rails server`,
 you server should listen in http://localhost:3000/
@@ -32,5 +33,7 @@ you server should listen in http://localhost:3000/
 - Rails 4.2.7
 - SQLite 3 (in ubuntu run `sudo apt-get install -y sqlite3 libsqlite3-dev`)
 - Gem Bundler (`gem install bundler`)
+- NodeJS
+- Bower (`npm install bower -g`)
 
 
