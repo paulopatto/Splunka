@@ -1,0 +1,22 @@
+<nav class='navbar navbar-inverse'>
+  <div class='container'>
+    <%= link_to "Splunka", root_path, class: 'navbar-brand' %>
+
+    <div id='navbar' class='navbar-collapse collapse' aria-expanded='true'>
+      <ul class='navbar-nav nav navbar-right'>
+        <li><%= link_to 'Home', root_path%></li>
+        <li><%= link_to 'Sobre', '#/about' %></li>
+        <li><%= link_to 'Contato', '#/contact' %></li>
+      </ul>
+    </div>
+
+    <button
+      class='navbar-toggle glyphicon glyphicon-menu-hamburger btn'
+      data-toggle='collapse'
+      data-target='div#navbar'
+      aria-expanded='false'
+      aria-controls='navbar'
+      style='background-color:#222; color:#EEE;'>
+    </button>
+  </div>
+</nav>
