@@ -1,0 +1,34 @@
+<h2> Splunka </h2>
+
+<div class='row'>
+  <%= render partial: 'form_new', locals: { sales_batch: SalesBatch.new } %>
+</div>
+<hr />
+
+<% #TODO: Move this to presenter %>
+<% if @sales_batches.empty? %>
+  <strong> Sem dados </strong>
+<% else %>
+  <table class='table table-striped'>
+    <tr>
+      <th> # Batch </th>
+      <th> Total de vendas </th>
+      <th> Receita Bruta </th>
+      <th> Status </th>
+    </tr>
+
+    <% @sales_batches.each do |batch| %>
+      <tr>
+        <td><%= link_to "##{batch.id}", sales_batch_path(batch) %></td>
+        <td><%= batch.sales.count %></td>
+        <td><%= number_to_currency(batch.revenue, :unit => "R$ ") %></td>
+        <td>
+          <p class='label <%= batch.processed ? "label-success" : "label-warning" %>'>
+            <%= (batch.processed) ? "Processado" : "A processar" %>
+          </p>
+        </td>
+      </tr>
+    <% end %>
+
+  </table>
+<% end %>

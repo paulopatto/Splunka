@@ -1,0 +1,32 @@
+<h3>Dados de venda</h3>
+<% if @sales_batch.processed? %>
+  <table class='table table-striped'>
+    <tr>
+      <th>#</th>
+      <th>Comprador</th>
+      <th>Descrição</th>
+      <th>Preço unitário</th>
+      <th>Quantidade</th>
+      <th>Endereço</th>
+      <th>Fornecedor</th>
+    </tr>
+    <% @sales_batch.sales.each do |sale| %>
+      <tr>
+        <td><%= link_to "##{sale.id}", sale_path(sale) %></td>
+        <td><%= sale.customer %></td>
+        <td><%= sale.description %></td>
+        <td><%= number_to_currency(sale.unit_price, :unit => "R$ ") %></td>
+        <td><%= sale.amount %></td>
+        <td><address><%= sale.address %></address></td>
+        <td><%= sale.supplier %></td>
+      </tr>
+    <% end %>
+  </table>
+  <strong> Código do Lote: </strong>
+  <code><%= @sales_batch.batch_code %></code>
+
+<% else %>
+  <p> A processar </p>
+<%end%>
+
+<%= link_to "Voltar para home", root_path %>
