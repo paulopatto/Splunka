@@ -1,0 +1,23 @@
+default: &default
+  :service: 'redis://localhost:6379'
+  :logfile: ./log/sidekiq.log
+  :queues:
+  - sales
+
+development:
+  <<: *default
+
+test:
+  <<: *default
+
+qa:
+  <<: *default
+
+production:
+  :service: 'redis://localhost:6379'
+  :user: 'admin'
+  :password: 'admin'
+  :logfile: ./log/sidekiq.log
+  :queues:
+  - sales
+
