@@ -23,6 +23,7 @@ We recommend you use one ruby version manager as [rbenv](http://rbenv.org/) | [r
 - 3. After run bundler you should you database config, one example file is in config/database.yml.sample, maybe you want use it with `cp config/database.yml.sample config/database.yml`.
 - 4. After configured database you go run `bundle exec rake db:migrate` to generate ou database schema.
 - 5. This project manage frontend dependencies with [bower](https://bower.io/), to build dependencies use `bower install`
+- 6. Init sidekiq with `bundle exec sidkiq -C config/sidekiq.yml`
 
 To run tests you user `bundle exec rspec spec`, to run webserver use `bundle exec rails server`,
 you server should listen in http://localhost:3000/
