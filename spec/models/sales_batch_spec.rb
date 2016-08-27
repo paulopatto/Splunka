@@ -18,16 +18,11 @@ describe SalesBatch, type: :model do
     is_expected.to have_many :sales
   end
 
-
   context 'validates' do
     subject { build(:sales_batch) }
 
     it '#uniqness :batch_code' do
       is_expected.to validate_uniqueness_of :batch_code
     end
-  end
-
-  context 'callbacks' do
-    pending "Warn: Callbacks as anti pattern"
   end
 end

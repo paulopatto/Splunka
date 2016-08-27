@@ -12,12 +12,15 @@
 #
 
 class SalesBatch < ActiveRecord::Base
-  include Concerns::SalesFromFile
-
   has_many :sales, dependent: :destroy
-
-  validates :batch_code, uniqueness: true, presence: false
+  before_create :generate_batch_code
+  validates :batch_code, uniqueness: true
 
   mount_uploader :attachment, SalesUploader
-  after_create :process_data_file!
+
+  private
+
+  def generate_batch_code
+    self.batch_code = SecureRandom.uuid
+  end
 end
