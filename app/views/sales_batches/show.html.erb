@@ -22,11 +22,18 @@
       </tr>
     <% end %>
   </table>
-  <strong> Código do Lote: </strong>
-  <code><%= @sales_batch.batch_code %></code>
+  <p>
+    <a href='<%= @sales_batch.attachment.url %>' class='btn btn-info' target='_blank'>
+      <span class='glyphicon glyphicon-download-alt'></span>
+      Download do arquivo original
+    </a>
+    <br />
+    <strong> Código do Lote: </strong>
+    <code><%= @sales_batch.batch_code %></code>
+  </p>
 
 <% else %>
   <p> A processar </p>
 <%end%>
 
-<%= link_to "Voltar para home", root_path %>
+<%= link_to "Voltar para home", root_path, class: "btn btn-info glyphicon glyphicon-menu-left" %>

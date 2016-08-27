@@ -1,6 +1,6 @@
 <%= form_for sales_batch, url: sales_batches_path, html: { class: 'form-inline' } do |f| %>
   <%= f.file_field :attachment, class: 'form-control' %>
-  <%= f.submit 'Enviar', class: 'btn btn-success' %>
+  <%= f.submit 'Enviar', class: 'glyphicon glyphicon-cloud-upload btn btn-success' %>
   <h4> Instruções para novo lote</h4>
   <p>
     Para criar um novo lote de vendas, selecione um arquivo no formato '.txt'
@@ -10,6 +10,7 @@
 
     <pre>Comprador descrição Preço Unitário  Quantidade  Endereço  Fornecedor</pre>
 
-    Você pode baixar um arquivo de <%= link_to "exemplo aqui", "/sales.txt" %>.
+    Você pode baixar um arquivo de  exemplo aqui
+    <%= link_to "Exemplo", "/sales.txt", class: 'glyphicon glyphicon-cloud-download btn-success' %>.
   </p>
 <% end %>

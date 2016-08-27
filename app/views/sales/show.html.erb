@@ -1,5 +1,4 @@
-
-<h3> Venda efetuada </h3>
+<h3> Log de venda efetuada </h3>
 
 <table class='table table-striped'>
   <tr>
@@ -9,14 +8,16 @@
     <th>Quantidade</th>
     <th>Endereço</th>
     <th>Fornecedor</th>
+    <th>Valor total da compra</th>
   </tr>
   <tr>
     <td><%= @sale.customer %></td>
     <td><%= @sale.description %></td>
-    <td><%= number_to_currency(@sale.unit_price, :unit => "R$ ") %></td>
+    <td><%= number_to_currency(@sale.unit_price, unit: "R$ ") %></td>
     <td><%= @sale.amount %></td>
     <td><address><%= @sale.address %></address></td>
     <td><%= @sale.supplier %></td>
+    <td><%= number_to_currency(@sale.amount * @sale.unit_price, unit: "BRL ") %></td>
   </tr>
 </table>
 
