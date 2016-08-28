@@ -11,7 +11,6 @@ class SalesBatchesController < ApplicationController
     @batch = SalesBatch.create(upload_params)
 
     if @batch.persisted?
-      SalesBatchWorker.perform_async(@batch.id)
       redirect_to sales_batches_path
     else
       render json: { error: @batch.errors }, status: :unprocessable_entity

@@ -36,5 +36,6 @@ you server should listen in http://localhost:3000/
 - Gem Bundler (`gem install bundler`)
 - NodeJS
 - Bower (`npm install bower -g`)
+- PhantomJS (to run features specs)
 
 

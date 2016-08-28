@@ -33,6 +33,8 @@ group :test do
   gem 'factory_girl_rails'
   gem 'shoulda-matchers'
   gem 'rspec-sidekiq'
+  gem 'capybara'
+  gem 'poltergeist'
 end
 
 gem 'react-rails'

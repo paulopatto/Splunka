@@ -14,6 +14,7 @@
 class SalesBatch < ActiveRecord::Base
   has_many :sales, dependent: :destroy
   before_create :generate_batch_code
+  after_create :process_attachment
   validates :batch_code, uniqueness: true
 
   mount_uploader :attachment, SalesUploader
@@ -22,5 +23,9 @@ class SalesBatch < ActiveRecord::Base
 
   def generate_batch_code
     self.batch_code = SecureRandom.uuid
+  end
+
+  def process_attachment
+    SalesBatchWorker.perform_async(self.id)
   end
 end
