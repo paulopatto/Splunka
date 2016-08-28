@@ -1,12 +1,35 @@
 <nav class='navbar navbar-inverse'>
   <div class='container'>
-    <%= link_to "Splunka", root_path, class: 'navbar-brand' %>
+    <%= link_to root_path, class: 'navbar-brand' do %>
+      <span style='color: #EFEFEF;'>Splunka</span>
+    <% end %>
 
     <div id='navbar' class='navbar-collapse collapse' aria-expanded='true'>
       <ul class='navbar-nav nav navbar-right'>
-        <li><%= link_to 'Home', root_path%></li>
-        <li><%= link_to 'Sobre', '#/about' %></li>
-        <li><%= link_to 'Contato', '#/contact' %></li>
+        <li>
+          <%= link_to root_path do %>
+            <span class='glyphicon glyphicon-home'></span>
+            Home
+          <% end %>
+        </li>
+        <li>
+          <%= link_to sidekiq_web_path, { title: 'Sidekiq Web' } do %>
+            <span class='glyphicon glyphicon-console'></span>
+            Sidekiq web
+          <% end %>
+        </li>
+        <li>
+          <%= link_to 'https://github.com/paulopatto/Splunka/blob/master/README.md' do %>
+            <span class='glyphicon glyphicon-info-sign'></span>
+            Sobre
+          <% end %>
+        </li>
+        <li>
+          <%= link_to 'mailto:paulopatto@paulopatto.com' do %>
+            <span class='glyphicon glyphicon-comment'></span>
+            Contato
+          <% end %>
+        </li>
       </ul>
     </div>
 

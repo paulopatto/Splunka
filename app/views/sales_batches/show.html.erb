@@ -1,5 +1,5 @@
 <h3>Dados do lote de venda</h3>
-<% if @sales_batch.processed? %>
+<% if @sales_batch.resolved? %>
   <table class='table table-striped'>
     <tr>
       <th>#</th>
@@ -36,4 +36,7 @@
   <p> A processar </p>
 <%end%>
 
-<%= link_to "Voltar para home", root_path, class: "btn btn-info glyphicon glyphicon-menu-left" %>
+<%= link_to root_path, class: "btn btn-info" do %>
+  <span class='glyphicon glyphicon-menu-left'></span>
+  Voltar
+<% end %>
