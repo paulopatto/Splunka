@@ -7,11 +7,11 @@ System sales analysis via log file (.txt)
 
 This system works with upload a log sales file (sales batch) and generate a total revenue  about this batch.
 
-> Warn: This is not a real system. It is just one example of use Ruby on Rails.
+> Warn: This is not a real system. It is just one example of use Ruby on Rails and show my dev skill.
 
 ## How to deploy in production
 
-> This project is not done to using in production.
+> To write.
 
 ## How to build in Development Environment
 
