@@ -23,8 +23,8 @@
         <td><%= batch.sales.count %></td>
         <td><%= number_to_currency(batch.revenue, :unit => "R$ ") %></td>
         <td>
-          <p class='label <%= batch.processed ? "label-success" : "label-warning" %>'>
-            <%= (batch.processed) ? "Processado" : "A processar" %>
+          <p class='label <%= batch.resolved? ? "label-success" : "label-warning" %>' title='<%= batch.state %>'>
+            <%= batch.resolved? ? "Processado" : "A processar" %>
           </p>
         </td>
       </tr>

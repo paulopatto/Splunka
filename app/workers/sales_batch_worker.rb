@@ -9,28 +9,29 @@ class SalesBatchWorker
 
   def perform(id)
     batch = SalesBatch.find(id)
+
+    batch.process!
+
     tsv = generate_tsv(batch.attachment.file.path)
 
     generate_sales_attrs(tsv).each do |sale_attr|
       batch.sales.create(sale_attr)
     end
 
-    update_batch!(batch)
+    calc_revenue(batch)
+    batch.resolve!
+  # rescue => e
+  #   logger.error "Erro de execução de job no sidekiq #{e}"
+  #   batch.reject!
   end
 
   private
 
-  def update_batch!(batch)
-    total_revenue = calc_revenue(batch)
-
-    batch.update_attributes({
-      processed: true,
-      revenue: total_revenue
-    })
-  end
-
   def calc_revenue(batch)
-    batch.sales.map{|sale| sale.amount * sale.unit_price }.reduce(:+)
+    total_revenue = batch.sales.map do |sale|
+      sale.amount * sale.unit_price
+    end.reduce(:+)
+    batch.update_attributes({ revenue: total_revenue })
   end
 
   def generate_sales_attrs(tsv)

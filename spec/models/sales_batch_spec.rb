@@ -4,11 +4,11 @@
 #
 #  id         :integer          not null, primary key
 #  attachment :string
-#  processed  :boolean          default(FALSE)
 #  revenue    :decimal(12, 2)   default(0.0)
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  batch_code :string
+#  state      :string
 #
 
 require 'rails_helper'
