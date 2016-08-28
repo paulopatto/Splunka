@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.7'
 
@@ -21,11 +20,13 @@ group :development, :test do
   gem 'pry-rails'
   gem 'pry-nav'
   gem 'annotate'
+  gem 'thin'
 end
 
 group :development do
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
+  # Spring speeds up development by keeping your application running in the background.
+  # Read more: https://github.com/rails/spring
+  # gem 'spring'
 end
 
 group :test do
@@ -40,3 +41,5 @@ end
 gem 'react-rails'
 gem 'carrierwave'
 gem 'sidekiq'
+gem 'state_machines-activerecord'
+
