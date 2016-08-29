@@ -39,6 +39,16 @@ class SalesBatch < ActiveRecord::Base
     end
   end
 
+  def total_sales
+    self.sales.count
+  end
+
+  #TODO: Comment this hack on codereview
+  def as_json(options={})
+    options[:methods] = [:total_sales]
+    super
+  end
+
   private
 
   def generate_batch_code
