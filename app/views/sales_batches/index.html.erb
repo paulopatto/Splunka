@@ -8,26 +8,5 @@
 <% if @sales_batches.empty? %>
   <strong> Sem dados </strong>
 <% else %>
-  <table class='table table-striped'>
-    <tr>
-      <th> # Batch </th>
-      <th> Total de vendas </th>
-      <th> Receita Bruta </th>
-      <th> Status </th>
-    </tr>
-
-    <% @sales_batches.each do |batch| %>
-      <tr>
-        <td><%= link_to "##{batch.id}", sales_batch_path(batch) %></td>
-        <td><%= batch.sales.count %></td>
-        <td><%= number_to_currency(batch.revenue, :unit => "R$ ") %></td>
-        <td>
-          <p class='label <%= batch.resolved? ? "label-success" : "label-warning" %>' title='<%= batch.state %>'>
-            <%= batch.resolved? ? "Processado" : "A processar" %>
-          </p>
-        </td>
-      </tr>
-    <% end %>
-
-  </table>
+  <%= react_component 'BatchListTable', { batches: @sales_batches } %>
 <% end %>
