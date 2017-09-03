@@ -18,3 +18,5 @@
 vendor/assets/components/
 public/uploads/
 config/database.yml
+package-lock.json
+node_modules/
