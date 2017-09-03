@@ -2,7 +2,6 @@
 
 System sales analysis via log file (.txt)
 
-
 ## Overview
 
 This system works with upload a log sales file (sales batch) and generate a total revenue  about this batch.
@@ -30,12 +29,11 @@ you server should listen in http://localhost:3000/
 
 ### Requirements
 
-- Ruby 2.1.3
-- Rails 4.2.7
+- Ruby 2.4.1
+- Rails 4.2.9
+- Redis (on ubuntu run `sudo apt install redis-server`
 - SQLite 3 (in ubuntu run `sudo apt-get install -y sqlite3 libsqlite3-dev`)
 - Gem Bundler (`gem install bundler`)
 - NodeJS
 - Bower (`npm install bower -g`)
 - PhantomJS (to run features specs)
-
-
