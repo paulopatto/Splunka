@@ -2,16 +2,15 @@
 
 System sales analysis via log file (.txt)
 
-
 ## Overview
 
 This system works with upload a log sales file (sales batch) and generate a total revenue  about this batch.
 
-> Warn: This is not a real system. It is just one example of use Ruby on Rails.
+> Warn: This is not a real system. It is just one example of use Ruby on Rails and show my dev skill.
 
 ## How to deploy in production
 
-> This project is not done to using in production.
+> To write.
 
 ## How to build in Development Environment
 
@@ -22,15 +21,19 @@ We recommend you use one ruby version manager as [rbenv](http://rbenv.org/) | [r
 - 2. In home path this project you should download all dependencies with bundler `bundle install`
 - 3. After run bundler you should you database config, one example file is in config/database.yml.sample, maybe you want use it with `cp config/database.yml.sample config/database.yml`.
 - 4. After configured database you go run `bundle exec rake db:migrate` to generate ou database schema.
+- 5. This project manage frontend dependencies with [bower](https://bower.io/), to build dependencies use `bower install`
+- 6. Init sidekiq with `bundle exec sidkiq -C config/sidekiq.yml`
 
 To run tests you user `bundle exec rspec spec`, to run webserver use `bundle exec rails server`,
 you server should listen in http://localhost:3000/
 
 ### Requirements
 
-- Ruby 2.1.3
-- Rails 4.2.7
+- Ruby 2.4.1
+- Rails 4.2.9
+- Redis (on ubuntu run `sudo apt install redis-server`
 - SQLite 3 (in ubuntu run `sudo apt-get install -y sqlite3 libsqlite3-dev`)
 - Gem Bundler (`gem install bundler`)
-
-
+- NodeJS
+- Bower (`npm install bower -g`)
+- PhantomJS (to run features specs)

@@ -18,3 +18,9 @@
 vendor/assets/components/
 public/uploads/
 config/database.yml
+package-lock.json
+node_modules/
+/public/packs
+/public/packs-test
+/node_modules
+yarn.lock

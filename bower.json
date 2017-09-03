@@ -1,8 +1,6 @@
 {
   "name": "Splunka",
-  "authors": [
-    "Paulo Patto <paulopatto@paulopatto.com>"
-  ],
+  "authors": [ "Paulo Patto <paulopatto@paulopatto.com>" ],
   "description": "",
   "main": "",
   "license": "MIT",

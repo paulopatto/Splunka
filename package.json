@@ -1,0 +1,39 @@
+{
+  "name": "splunka",
+  "version": "0.0.1",
+  "description": "My description",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paulopatto/Splunka.git"
+  },
+  "keywords": [
+    "rails",
+    "react"
+  ],
+  "author": "Paulo Patto <paulopatto@paulopatto.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/paulopatto/Splunka/issues"
+  },
+  "homepage": "https://github.com/paulopatto/Splunka#readme",
+  "dependencies": {
+    "@rails/webpacker": "^3.0.1",
+    "babel-preset-react": "^6.24.1",
+    "bower": "^1.8.0",
+    "phantomjs": "^2.1.7",
+    "prop-types": "^15.5.10",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "yarn": "^0.27.5"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^2.7.1"
+  }
+}

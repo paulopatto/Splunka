@@ -1,15 +1,28 @@
+<div class='well'>
 <%= form_for sales_batch, url: sales_batches_path, html: { class: 'form-inline' } do |f| %>
-  <%= f.file_field :attachment, class: 'form-control' %>
-  <%= f.submit 'Enviar', class: 'btn btn-success' %>
-  <h4> Instruções para novo lote</h4>
+  <h3> Instruções para novo lote</h3>
   <p>
     Para criar um novo lote de vendas, selecione um arquivo no formato '.txt'
     com dados separados por <code>TAB</code>.
     <br />
     A primeira linha do arquivo deve conter os nome das colunas obrigatóriamente:
+    <code><pre>Comprador descrição Preço Unitário  Quantidade  Endereço  Fornecedor</pre></code>
+    Você pode baixar um arquivo de  exemplo aqui.
+    <br />
 
-    <pre>Comprador descrição Preço Unitário  Quantidade  Endereço  Fornecedor</pre>
-
-    Você pode baixar um arquivo de <%= link_to "exemplo aqui", "/sales.txt" %>.
+    <%= link_to "/sales.txt", class: 'btn btn-success' do %>
+      <span class='glyphicon glyphicon-cloud-download'></span>
+      Download de modelo de Arquivo de lote
+    <% end %>
   </p>
+  <hr />
+
+  <div class='center-block'>
+    <%= f.file_field :attachment, class: 'form-control' %>
+    <%= f.button :send, class: 'btn btn-success' do %>
+      <span class='glyphicon glyphicon-cloud-upload'></span>
+      Enviar novo arquivo de lote
+    <% end %>
+  </div>
 <% end %>
+</div>

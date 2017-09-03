@@ -9,7 +9,12 @@ class SalesBatchesController < ApplicationController
 
   def create
     @batch = SalesBatch.create(upload_params)
-    redirect_to sales_batch_path(@batch)
+
+    if @batch.persisted?
+      redirect_to sales_batches_path
+    else
+      render json: { error: @batch.errors }, status: :unprocessable_entity
+    end
   end
 
   def show
