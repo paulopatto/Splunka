@@ -4,6 +4,8 @@ services:
     image: postgres
   redis:
     image: redis
+    ports:
+      - "6379":"6379"
   # worker:
   #   build: .
   #   command: bundle exec sidkiq -C config/sidekiq.yml
