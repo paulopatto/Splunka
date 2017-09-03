@@ -1,0 +1,21 @@
+version: '2'
+services:
+  db: 
+    image: postgres
+  redis:
+    image: redis
+  # worker:
+  #   build: .
+  #   command: bundle exec sidkiq -C config/sidekiq.yml
+  #   volumes:
+  #     - .:/opt/splunka
+  web:
+    build: .
+    command: bundle exec rails server -p 3000 -b '0.0.0.0'
+    volumes: 
+      - .:/opt/splunka
+    ports: 
+      - '3000':'3000'
+    depends_on:
+      - db
+      - redis
